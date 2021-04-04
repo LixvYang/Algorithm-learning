@@ -35,24 +35,23 @@ func (c *customStack) Size() int {
     return c.stack.Len()
 }
 
-func (c *customStack) Empty() bool {
-    return c.stack.Len() == 0
-}
-
 func main() {
-    customQueue := &customStack{
+    //声明堆栈
+    ourStack := &customStack{
         stack: list.New(),
     }
-    fmt.Printf("Push: Hello\n")
-    customQueue.Push("Hello")
-    fmt.Printf("Push: World\n")
-    customQueue.Push("World")
-    fmt.Printf("Size: %d\n", customQueue.Size())
-    for customQueue.Size() > 0 {
-        frontVal, _ := customQueue.Front()
-        fmt.Printf("Front: %s\n", frontVal)
-        fmt.Printf("Pop: %s\n", frontVal)
-        customQueue.Pop()
+    //Push 盘子A,盘子B
+    ourStack.Push("盘子A")
+    ourStack.Push("盘子B")
+    fmt.Printf("Size:%d\n",ourStack.Size())
+	ourStack.Push("盘子C")
+	ourStack.Push("盘子D")
+    //Pop所有盘子
+    for ourStack.Size() > 0 {
+        frontvalue,_ := ourStack.Front()
+        fmt.Printf("Front: %s\n",frontvalue)
+        fmt.Printf("Pop: %s\n",frontvalue)
+        ourStack.Pop()
     }
-    fmt.Printf("Size: %d\n", customQueue.Size())
+    fmt.Printf("Size:%d\n",ourStack.Size())
 }
