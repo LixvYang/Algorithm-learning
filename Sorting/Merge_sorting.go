@@ -25,6 +25,7 @@ func mergesort(arr []int)  {
 }
 
 func mergeSort(arr []int,start,end int) {
+	//前提
 	if start >= end {
 		return
 	}
