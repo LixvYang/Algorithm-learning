@@ -12,7 +12,6 @@ func QuickSort(arr []int)  {
 	len := len(arr)
 
 	separateSort(arr,0,len-1)
-	
 	fmt.Println("After Sorting")
     for _, val := range arr {
         fmt.Println(val)
@@ -36,13 +35,13 @@ func partition(arr []int, start, end int) int {
 	for j := start; j < end; j++ {
 		if arr[j] < pivot {
 			if !(i == j) {
-				// 交换位置
+				// 交换位置 	
 				arr[i], arr[j] = arr[j], arr[i]
 			}
 			i++
 		}
 	}
-
+	
 	arr[i], arr[end] = arr[end], arr[i]
 
 	return i	
