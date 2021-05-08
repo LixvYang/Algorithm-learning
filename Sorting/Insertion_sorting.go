@@ -19,7 +19,6 @@ func insertionSort(arr []int) {
             }
         }
     }
-    
     fmt.Println("After Sorting")
     for _, val := range arr {
         fmt.Println(val)

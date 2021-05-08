@@ -9,7 +9,9 @@ func main()  {
 }
 
 func QuickSort(arr []int)  {
-	separateSort(arr,0,len(arr)-1)
+	len := len(arr)
+
+	separateSort(arr,0,len-1)
 	
 	fmt.Println("After Sorting")
     for _, val := range arr {
