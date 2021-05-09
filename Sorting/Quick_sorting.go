@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
+
 
 func main()  {
 	sample := []int{3, 4, 5, 2, 1,6,7,8}
@@ -9,6 +13,7 @@ func main()  {
 }
 
 func QuickSort(arr []int)  {
+	starttime := time.Now()
 	len := len(arr)
 
 	separateSort(arr,0,len-1)
@@ -16,6 +21,8 @@ func QuickSort(arr []int)  {
     for _, val := range arr {
         fmt.Println(val)
     }
+	elapsed := time.Since(starttime)
+    fmt.Println("All time: ", elapsed)
 }
 
 func separateSort(arr []int,start,end int)  {
