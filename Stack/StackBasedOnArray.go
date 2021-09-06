@@ -6,14 +6,14 @@ import (
 
 type ArrayStack struct {
 	//data
-	data []int
+	data []interface{}
 	//top
 	top int
 }
 
 func NewArrayStack() *ArrayStack {
 	return &ArrayStack{
-		data: make([]interface{}, 0, 32),
+		data: make([]interface{},0,32),
 		top:-1,
 	}
 }
