@@ -1,8 +1,8 @@
 package array
 
 import (
-	"fmt"
 	"errors"
+	"fmt"
 )
 
 type Array struct {
@@ -15,64 +15,66 @@ func NewArray(capacity uint) *Array {
 		return nil
 	}
 	return &Array{
-		data: make([]int,capacity,capacity),
+		data: make([]int,capacity),
 		length: 0,
 	}
 }
 
-func (this *Array) Len() uint {
-	return this.length
+func (a *Array) Len() uint {
+	return a.length
 }
 
-func (this *Array) isIndexOutofRange(index uint) bool {
-	if index >= uint(cap(this.data)) {
+func (a *Array) isIndexOutOfRange(index uint) bool {
+	if index > uint(cap(a.data)) {
 		return true
+	} else {
+		return false
 	}
-	return false
 }
 
-func (this *Array) Find(index uint) (int,error) {
-	if this.isIndexOutofRange(index) {
-		return 0,errors.New("Out of range")
+func (a *Array) Find(index uint) (int,error) {
+	if a.isIndexOutOfRange(index) {
+		return 0, fmt.Errorf("out of index range")
 	}
-	return this.data[index],nil
+	return a.data[index],nil
 }
 
-func (this *Array) Insert(index uint,v int) error {
-	if this.Len() == uint(cap(this.data)) {
+func (a *Array) Insert(index uint,v int) error {
+	if a.Len() == uint(cap(a.data)) {
 		return errors.New("full array")
 	}
-	if index != this.length && this.isIndexOutofRange(index) {
-		return errors.New("out of range")
+	if index != a.length && a.isIndexOutOfRange(index) {
+		return errors.New("out of index range")
 	}
-	for i := this.length;i > index;i++ {
-		this.data[i] = this.data[i-1]
+	for i:= a.length;i > index;i-- {
+		a.data[i] = a.data[i-1]
 	}
-	this.data[index]=v
-	this.length++
+	a.data[index] = v
+	a.length++
 	return nil
 }
 
-func (this *Array) InsertAll(v int) error {
-	return this.Insert(this.length,v)
+func (a *Array) InsertToTail(v int) error {
+	return a.Insert(a.Len(), v)
 }
 
-func (this *Array) Delete(index uint) (int, error) {
-	if this.isIndexOutofRange(index) {
+func (a *Array) Delete(index uint) (int,error) {
+	if a.isIndexOutOfRange(index) {
 		return 0, errors.New("out of index range")
 	}
-	v := this.data[index]
-	for i := index; i < this.Len()-1; i++ {
-		this.data[i] = this.data[i+1]
+	v := a.data[index]
+	for i := index;i < a.Len() - 1;i++ {
+		a.data[i] = a.data[i+1]
 	}
-	this.length--
-	return v, nil
+	a.length--
+	return v,nil
 }
 
-func (this *Array) Print() {
+func (a *Array) Print()  {
 	var format string
-	for i := uint(0); i < this.Len(); i++ {
-		format += fmt.Sprintf("|%+v", this.data[i])
+
+	for i := uint(0); i < a.Len(); i++ {
+		format += fmt.Sprintf("|%+v", a.data[i])
 	}
 	fmt.Println(format)
 }
