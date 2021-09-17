@@ -1,28 +1,29 @@
-package main
+package sorting
+// package main
 
-import "fmt"
+// import "fmt"
 
-func main() {
-	sample := []int{3, 4, 5, 2, 1}
-    selectionSort(sample)
-    sample = []int{3, 4, 5, 2, 1, 7, 8, -1, -3}
-    selectionSort(sample)
-}
+// func main() {
+// 	sample := []int{3, 4, 5, 2, 1}
+//     selectionSort(sample)
+//     sample = []int{3, 4, 5, 2, 1, 7, 8, -1, -3}
+//     selectionSort(sample)
+// }
 
 
-func selectionSort(arr []int) {
-	len := len(arr)
+// func selectionSort(arr []int) {
+// 	len := len(arr)
 
-	for i := 0;i < len-1;i++{
-		minIndex := i
-		for j := i+1;j < len;j++ {
-			if arr[j] < arr[minIndex] {
-				arr[j],arr[minIndex] = arr[minIndex],arr[j]
-			}
-		}
-	}
-	fmt.Println("\nAfter SelectionSort")
-	for _,Val := range arr {
-		fmt.Println(Val)
-	}
-}
+// 	for i := 0;i < len-1;i++{
+// 		minIndex := i
+// 		for j := i+1;j < len;j++ {
+// 			if arr[j] < arr[minIndex] {
+// 				arr[j],arr[minIndex] = arr[minIndex],arr[j]
+// 			}
+// 		}
+// 	}
+// 	fmt.Println("\nAfter SelectionSort")
+// 	for _,Val := range arr {
+// 		fmt.Println(Val)
+// 	}
+// }
