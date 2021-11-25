@@ -1,3 +1,4 @@
+// Package recursion provides 
 package recursion
 
 type Fac struct {
@@ -5,14 +6,17 @@ type Fac struct {
 }
 
 func NewFactorial(n int) *Fac {
-	return &Fac{make(map[int]int,n)}
+	return &Fac{
+		make(map[int]int,n),
+	}
 }
 
 func (f *Fac) Factorial(n int) int {
-	if f.val[n] != 0 {
+	if f.val[n]!=0{
 		return f.val[n]
 	}
-	if n <= 1 {
+
+	if n < 1 {
 		f.val[n] = 1
 		return 1
 	} else {
@@ -22,7 +26,6 @@ func (f *Fac) Factorial(n int) int {
 	}
 }
 
-func (f *Fac) Print(n int)  {
-	println(f.val[n])
+func (fac *Fac) Print(n int )  {
+	println(fac.val[n])
 }
-
