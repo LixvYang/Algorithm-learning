@@ -1,4 +1,5 @@
 package sorting
+
 // package main
 
 // import "fmt"
@@ -25,3 +26,19 @@ package sorting
 //         fmt.Println(val)
 //     }
 // }
+
+func sort(arr []int) {
+	len := len(arr)
+	for i := 1; i < len; i++ {
+		value := arr[i]
+		j := i - 1
+		for ; j >= 0; j-- {
+			if value < arr[j] {
+				arr[j+1] = arr[j]
+			} else {
+				break
+			}
+		}
+		arr[j+1] = value
+	}
+}
