@@ -86,7 +86,7 @@ func (self *Graph) DFS(s, t int) {
 	printPrev(prev, s, t)
 }
 
-func recurse(s,t int, prev []int, visited []bool, isFound bool) {
+func (self *Graph) recurse(s,t int, prev []int, visited []bool, isFound bool) {
 	if isFound {
 		return
 	}
