@@ -47,7 +47,7 @@ func (node *TreeNode) InOrder(result *[]int) {
 } 
 
 func (tree BinarySearchTree) FindMin() int {
-	node = tree.Root
+	node := tree.Root
 	for {
 		if node.Left != nil {
 			node = node.Left
@@ -58,7 +58,7 @@ func (tree BinarySearchTree) FindMin() int {
 }
 
 func (tree BinarySearchTree) FindMax() {
-	node = tree.Root
+	node := tree.Root
 	for {
 		if node.Right != nil {
 			node = node.Right
@@ -69,7 +69,7 @@ func (tree BinarySearchTree) FindMax() {
 }
 
 func (tree BinarySearch) Find(v int) bool {
-	node = tree.Node
+	node := tree.Node
 	for {
 		if node == nil {
 			return false
