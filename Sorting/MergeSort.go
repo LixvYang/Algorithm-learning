@@ -14,7 +14,7 @@ func mergeSort(arr []int, start,end int) {
 		return
 	}
 
-	mid := (start+end)/2
+	mid := (start+end) / 2
 
 	mergeSort(arr, start, mid)
 	mergeSort(arr, mid+1, end)

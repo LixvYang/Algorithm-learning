@@ -28,16 +28,16 @@ package sorting
 // 	}
 // }
 
-// func sort(arr[]int) {
-// 	len := len(arr)
+func sort(arr[]int) {
+	len := len(arr)
 
-// 	for i := 0;i < len; i++ {
-// 		minIndex := i
-// 		for j := i+1; j < len; j++ {
-// 			if arr[j] < arr[minIndex] {
-// 				minIndex = j
-// 			}
-// 		}
-// 		arr[i],arr[minIndex] = arr[minIndex],arr[i]
-// 	}
-// }
+	for i := 0; i < len; i++ {
+		minIndex := i
+		for j := i+1; j < len; j++ {
+			if arr[j] < arr[minIndex] {
+				minIndex = j
+			}
+		}
+		arr[minIndex], arr[i] = arr[i], arr[minIndex]
+	}
+}
