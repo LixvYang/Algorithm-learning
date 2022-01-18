@@ -1,6 +1,6 @@
 package leetcode
 
-func  inorderTraversal(root *TreeNode) []int {
+func inorderTraversal(root *TreeNode) []int {
 	res := make([]int, 0)
 	var traversal func(node *TreeNode)
 	traversal = func(node *TreeNode)  {
@@ -14,3 +14,4 @@ func  inorderTraversal(root *TreeNode) []int {
 	traversal(root)
 	return res
 }
+

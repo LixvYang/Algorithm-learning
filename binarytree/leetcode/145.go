@@ -15,3 +15,42 @@ func postorderTraversal(root *TreeNode) []int {
 	traversal(root)
 	return res
 }
+
+func postorderTraversal2(root *TreeNode) []int {
+	ans := make([]int, 0)
+
+	if root == nil {
+		return ans
+	}
+
+	st := list.New()
+	st.PushBack(root)
+
+	for st.Len() > 0 {
+		node := st.Remove(st.Back()).(*TreeNode)
+
+		ans = append(ans, node.Val)
+
+		if node.Left != nil {
+			st.PushBack(node.Left)
+		}
+
+		if node.Right != nil {
+			st.PushBack(node.Right)
+		}
+	}
+
+	reverse(ans)
+
+	return ans
+}
+
+func reverse(ans []int) {
+	l, r := 0, len(ans)-1
+	for l<r {
+		ans[l], ans[r] = ans[r], ans[l]
+		l++
+		r--
+	}
+	return ans
+}

@@ -27,18 +27,18 @@ func preorderTraversal(root *TreeNode)  {
 	return res
 }
 
-func preorderTraversal2(root *TreeNode) {
-	ans := []int{}
+func preorderTraversal2(root *TreeNode) []int {
+	ans := make([]int, 0)
+
 	if root == nil {
 		return ans
 	}
 
 	st := list.New()
 	st.PushBack(root)
-
 	for st.Len() > 0 {
 		node := st.Remove(st.Back()).(*TreeNode)
-		
+
 		ans = append(ans, node.Val)
 		if node.Right != nil {
 			st.PushBack(node.Right)
@@ -48,4 +48,5 @@ func preorderTraversal2(root *TreeNode) {
 		}
 	}
 	return ans
+
 }
