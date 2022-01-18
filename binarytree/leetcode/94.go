@@ -15,3 +15,25 @@ func inorderTraversal(root *TreeNode) []int {
 	return res
 }
 
+func inorderTraversal2(root *TreeNode) []int {
+	ans := []int{}
+
+	if root == nil {
+		return ans
+	}
+
+	st := list.New()
+	cur := root
+
+	for cur != nil || st.Len() > 0 {
+		if cur != nil {
+			st.PushBack(cur)
+			cur = cur.Left
+		} else {
+			cur = st.Remove(st.Back()).(*TreeNode)
+			ans = append(ans, cur)
+			cur = cur.Right
+		}
+	}
+	return ans
+}
