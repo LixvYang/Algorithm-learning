@@ -5,14 +5,6 @@ import (
 	"container/list"
 )
 
-type Node struct {
-	Val int
-	Left *Node
-	Right *Node
-	Next *Node
-}
-
-
 func connect(root *Node) *Node {
 		res:=[][]*Node{}
     if root==nil{//防止为空
