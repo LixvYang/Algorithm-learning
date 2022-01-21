@@ -28,3 +28,13 @@ func maxDepth(root *TreeNode) int {
 	}
 	return ans
 }
+
+func maxdepth1(root *TreeNode) int {
+	if root == 	nil {
+		return 0
+	}
+	return max(maxdepth1(root.Left),maxdepth1(root.Right))+1
+}
+
+
+

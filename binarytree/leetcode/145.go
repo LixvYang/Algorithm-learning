@@ -1,6 +1,7 @@
 // Package leetcode provides 
 package leetcode
 
+// 递归法后序遍历
 func postorderTraversal(root *TreeNode) []int {
 	res := make([]int, 0)
 	var traversal func(node *TreeNode)
@@ -16,6 +17,7 @@ func postorderTraversal(root *TreeNode) []int {
 	return res
 }
 
+// 迭代法后序遍历
 func postorderTraversal2(root *TreeNode) []int {
 	ans := make([]int, 0)
 
