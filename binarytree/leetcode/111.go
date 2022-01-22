@@ -28,3 +28,23 @@ func minDepth(root *TreeNode) int {
     }
     return ans+1
 }
+
+func min(a, b int) int {
+    if a < b {
+        return a
+    }
+    return b
+}
+
+func minDepth1(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    if root.Left == nil && root.Right != nil {
+        return 1 + minDepth1(root.Right)
+    }
+    if root.Right == nil && root.Left != nil {
+        return 1 + minDepth(root.Left);
+    }
+    return min(minDepth1(root.Left), minDepth1(root.Right))+1
+}
