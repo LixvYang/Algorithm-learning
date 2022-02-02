@@ -24,7 +24,7 @@ func backtrack(n int, k int, start int, track []int) {
 			return
 		}
 
-    for i:=start;i<=n;i++ {
+    for i:=start;i<=n-(start-len(track))+1;i++ {
         track = append(track, i)
         backtrack(n,k,i+1,track)
         track= track[:len(track)-1]
