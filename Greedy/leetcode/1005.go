@@ -1,6 +1,11 @@
 // Package leetcode provides 
 package leetcode
 
+import (
+	"sort"
+	"math"
+)
+
 func largestSumAfterKNegations(nums []int, K int) int {
 	sort.Slice(nums, func(i, j int) bool {
 		return math.Abs(float64(nums[i])) > math.Abs(float64(nums[j]))
