@@ -10,8 +10,8 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 	for i:=0;i<m && obstacleGrid[i][0] == 0;i++ {
 		dp[i][0] = 1
 	}
-	for i:=0;i<n && obstacleGrid[0][j] == 0; j++ {
-		dp[0][j] = 1
+	for i:=0;i<n && obstacleGrid[0][i] == 0; i++ {
+		dp[0][i] = 1
 	}
 
 	for i:=0;i<m;i++ {
