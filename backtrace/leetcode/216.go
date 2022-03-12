@@ -31,3 +31,34 @@ func backTree(n,k,startIndex int, track *[]int, result *[][]int) {
 			*track=(*track)[:len(*track)-1]
 	}
 }
+
+var res [][]int
+func combinationSum3(k int, n int) [][]int {
+    res := [][]int{}
+    backtrack(1, n, k, 0, []int{})
+    return res
+}
+
+func backtrack(startIndex, targetSum, k, sum int, track []int) {
+    if sum > targetSum {
+        return
+    }
+
+
+    if len(track) == k {
+        if sum == targetSum {
+            temp := make([]int, len(track))
+            copy(temp, track)
+            res = append(res, temp)
+        }
+        return
+    }
+
+    for i := startIndex; i < 9;i++ {
+        sum += i
+        track = append(track, i)
+        backtrack(startIndex, targetSum, k, sum, track)
+        sum-=i
+        track = track[:len(track)-1]
+    }
+}
