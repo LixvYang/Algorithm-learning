@@ -1,4 +1,6 @@
 //三数之和
+package leetcode
+
 import "sort"
 
 func threeSum(nums []int) [][]int {
