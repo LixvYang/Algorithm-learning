@@ -1,33 +1,25 @@
+// 乘积最大子数组
 package leetcode
 
-import "math"
 
 func maxProduct(nums []int) int {
-	max := math.IntMin32
-	imax := 1
-	imin := 1
-	for i := 0; i < len(nums); i++ {
-		if nums[i] < 0 {
-			temp := imax
-			imax = imin
-			imin = temp
-		}
-		imax = da(nums[i], imax*nums[i])
-		imin = xiao(nums[i], imin*nums[i])
-		max = da(max, imax)
+	if len(nums) == 1 {
+		return nums[0]
 	}
-	return max
+
+	if len(nums) == 0 {
+		return 0
+	}
+
+	maxValue, minValue := nums[0], nums[0]
+	ans := nums[0]
+	for i := 1; i < len(nums); i++ {
+		maxValue_ := max(maxValue*nums[i], max(minValue*nums[i], nums[i]))
+		minValue = min(maxValue*nums[i], min(minValue*nums[i], nums[i]))
+		maxValue = maxValue_
+		ans = max(ans, maxValue)
+	}
+
+	return ans
 }
 
-func da(a, b int) int {
-	if a < b {
-		return b
-	}
-	return a
-}
-func xiao(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
