@@ -1,13 +1,15 @@
-package sorting
-// package main
+// package sorting
+package main
 
 // import "fmt"
 
 // func main() {
 // 	sample := []int{3, 4, 5, 2, 1}
-//     selectionSort(sample)
-//     sample = []int{3, 4, 5, 2, 1, 7, 8, -1, -3}
-//     selectionSort(sample)
+// 	sort(sample)
+// 	fmt.Println(sample)
+//   sample = []int{3, 4, 5, 2, 1, 7, 8, -1, -3}
+//   sort(sample)
+// 	fmt.Println(sample)
 // }
 
 
@@ -29,15 +31,16 @@ package sorting
 // }
 
 func sort(arr[]int) {
-	len := len(arr)
+	length := len(arr)
 
-	for i := 0; i < len; i++ {
+	for i := 0; i < length-1; i++ {
 		minIndex := i
-		for j := i+1; j < len; j++ {
-			if arr[j] < arr[minIndex] {
+		for j := i+1; j < length; j++ {
+			if arr[minIndex] > arr[j] {
 				minIndex = j
 			}
 		}
 		arr[minIndex], arr[i] = arr[i], arr[minIndex]
 	}
+	fmt.Println(arr)
 }

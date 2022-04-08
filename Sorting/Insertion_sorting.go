@@ -1,16 +1,15 @@
-package sorting
+// package sorting
 
-// package main
+package main
 
-// import "fmt"
+import "fmt"
 
-// func main() {
-//     sample := []int{3, 4, 5, 2, 1}
-//     insertionSort(sample)
-
-//     sample = []int{3, 4, 5, 2, 1, 7, 8, -1, -3}
-//     insertionSort(sample)
-// }
+func main() {
+    sample := []int{3, 4, 5, 2, 1}
+    sort(sample)
+    sample = []int{3, 4, 5, 2, 1, 7, 8, -1, -3}
+    sort(sample)
+}
 
 // func insertionSort(arr []int) {
 //     len := len(arr)
@@ -28,17 +27,14 @@ package sorting
 // }
 
 func sort(arr []int) {
-	len := len(arr)
-	for i := 1; i < len; i++ {
-		value := arr[i]
-		j := i-1
-		for ;j > 0;j-- {
-			if value < arr[j] {
-				a[j+1] = a[j]
-			} else {
-				break
-			}
+	for i := 0; i < len(arr); i++ {
+		preIndex := i-1
+		current := arr[i]
+		for preIndex >= 0 && arr[preIndex] > current {
+			arr[preIndex+1] = arr[preIndex]
+			preIndex--
 		}
-		a[j+1] = value
+		arr[preIndex+1] = current
 	}
+	fmt.Println(arr)
 }
