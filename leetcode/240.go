@@ -1,4 +1,6 @@
 //搜索二维矩阵
+package leetcode
+
 func searchMatrix(matrix [][]int, target int) bool {
 	// 二分查找，搜索二维矩阵中的值，左至右递增，上到下递增
 
@@ -21,5 +23,19 @@ func searchMatrix(matrix [][]int, target int) bool {
 		}
 	}
 	// 锯齿形遍历没有找到，false
+	return false
+}
+
+func searchMatrix(matrix [][]int, target int) bool {
+	i, j := 0, len(matrix[0])-1
+	for i < len(matrix) && j >= 0 {
+		if matrix[i][j] == target {
+			return true
+		} else if matrix[i][j] < target {
+			i++
+		} else {
+			j--
+		}
+	}
 	return false
 }
