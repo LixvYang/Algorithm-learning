@@ -1,6 +1,7 @@
 // 排序链表
 package leetcode
 
+// [4,2,1,3]
 func sortList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
