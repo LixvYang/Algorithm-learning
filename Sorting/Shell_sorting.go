@@ -6,28 +6,18 @@ import "fmt"
 func main() {
 	arr := []int{6, 5, 3, 1, 8, 7, 2, 4, 9, 0}
 	shellSort(arr)
+	fmt.Println(arr)
 }
 
 func shellSort(arr []int) {
-	length := len(arr)
-
-	gap := 1
-	for gap < length/3 {
-		gap = gap*3 + 1
- 	}
-	fmt.Println(gap)
-
-	for gap > 0 {
-		for i := gap; i < length; i++ {
-			temp := arr[i] 
-			j := i-gap
-			for j >= 0 && arr[j] > temp {
-				arr[j+gap] = arr[j]
-				j-=gap
+	for gap := 4; gap > 0; gap /= 2 {
+		for i := gap; i < len(arr); i++ {
+			for j := i; j >gap-1;j-=gap {
+				if arr[j] < arr[j-gap] {
+					arr[j], arr[j-gap] = arr[j-gap], arr[j]
+				}
 			}
-			arr[j+gap] = temp
 		}
-		gap /= 3
 	}
-	fmt.Println(arr)
+	
 }

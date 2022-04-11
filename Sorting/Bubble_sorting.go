@@ -1,5 +1,5 @@
 // 冒泡排序
-package main
+// package main
 
 // import "fmt"
 
@@ -27,19 +27,14 @@ package main
 // 	}
 // }
 
-func bubbleSort(arr []int) []int {
-	length := len(arr)
-	for i := 0; i < length; i++ {
-		for j := 0; j < length-i-1; j++ {
-			if arr[j] > arr[j+1] {
-				arr[j], arr[j+1] = arr[j+1], arr[j]
-			}
-		}
-	}
+// func bubbleSort(arr []int) []int {
+// 	for i := len(arr)-1; i > 0; i-- {
+// 		for j := 0; j < i; j++ {
+// 			if arr[j] > arr[j+1] {
+// 				arr[j], arr[j+1] = arr[j+1], arr[j]
+// 			}
+// 		}
+// 	}
 
-	// fmt.Println("\nAfter Bubblee Sorting")
-	// for _,val := range arr {
-	// 	fmt.Println(val)
-	// }
-	return arr
-}
+// 	return arr
+// }
