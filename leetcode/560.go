@@ -16,4 +16,16 @@ func subarraySum(nums []int, k int) int {
 
 }
 
-func
+func subarraySum(nums []int, k int) int {
+	count := 0
+	hash := map[int]int{0 : 1}
+	preSum := 0
+
+	for num := range nums {
+		preSum += num
+		if hash[preSum - k] > 0 {
+			count += hash[preSum - k]
+		}
+	}
+	return count
+}
