@@ -1,6 +1,16 @@
-package sorting
-func QuickSort(arr []int) {
+package main
+
+import "fmt"
+
+func main() {
+	arr := []int{10, 9, 8, 7, 6, 5, 4, 3, 2, 1}
+	QuickSort(arr)
+	fmt.Println(arr)
+}
+
+func QuickSort(arr []int) []int {
 	separateSort(arr, 0, len(arr)-1)
+	return arr
 }
 
 func separateSort(arr []int, start, end int) {
@@ -10,7 +20,7 @@ func separateSort(arr []int, start, end int) {
 
 	i := partition(arr, start, end)
 	separateSort(arr,start,i-1)
-	separateSort(arr, i+1; end)
+	separateSort(arr, i+1, end)
 }
 
 func partition(arr []int, start, end int) int {
