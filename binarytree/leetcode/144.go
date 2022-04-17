@@ -50,3 +50,25 @@ func preorderTraversal2(root *TreeNode) []int {
 	return ans
 
 }
+
+func preorderTraversal(root *TreeNode) []int {
+	ans := make([]int, 0)
+	if root == nil {
+		return ans
+	}
+
+	stack := make([]*TreeNode, 0)
+	stack = append(stack, root)
+	for len(stack) > 0 {
+		node := stack[len(stack)-1]
+		if node == nil {
+			stack = stack[:len(stack)-1]
+			continue
+		}
+		ans = append(ans, node.Val)
+		stack = stack[:len(stack)-1]
+		stack = append(stack, node.Right)
+		stack = append(stack, node.Left)
+	}
+	return ansgi
+}
