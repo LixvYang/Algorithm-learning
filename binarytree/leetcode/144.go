@@ -70,5 +70,5 @@ func preorderTraversal(root *TreeNode) []int {
 		stack = append(stack, node.Right)
 		stack = append(stack, node.Left)
 	}
-	return ansgi
+	return ans
 }
