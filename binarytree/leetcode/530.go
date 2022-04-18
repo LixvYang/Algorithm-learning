@@ -23,3 +23,25 @@ func findMin(root *TreeNode, res *[]int) {
 	*res = append(*res, root.Val)
 	findMin(root.Right, res)
 }
+
+func getMinimumDifference(root *TreeNode) int {
+	result := math.MaxInt32
+	var pre *TreeNode
+
+	var dfs func(node *TreeNode)
+	dfs = func(node *TreeNode) {
+		if node == nil {
+			return 
+		}
+		dfs(node.Left)
+		if pre != nil {
+			result = min(result, node.Val - pre.Val)
+		}
+		pre = node
+
+		dfs(node.Right)
+	}
+
+	dfs(root)
+	return result
+}
