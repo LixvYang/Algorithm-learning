@@ -24,3 +24,21 @@ func isValidBST(root *TreeNode) bool {
 	}
 	return true
 }
+
+func isValidBST(root *TreeNode) bool {
+	var pre *TreeNode
+
+	var traverse func(node *TreeNode) bool
+	traverse = func(node *TreeNode) bool {
+		if node == nil {
+			return true
+		}
+		traverse(node.Left)
+		if pre != nil && pre.Val >= node.Val {
+			return false
+		}
+		pre = node
+		traverse(node.Right)
+	}
+	return traverse(root)
+}
