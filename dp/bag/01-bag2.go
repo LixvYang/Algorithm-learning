@@ -8,6 +8,7 @@ func test_1_wei_bag_problem(weight, value []int, bagweight int) int {
 			dp[j] = max(dp[j], dp[j-weight[i]]+value[i])
 		}
 	}
+	
 	return dp[bagweight]
 }
 
