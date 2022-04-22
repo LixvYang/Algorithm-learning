@@ -15,11 +15,11 @@ func findMaxForm(strs []string, m int, n int) int {
 			}
 			oneNum = len(strs[i])-zeroNum
 			for j:= m ; j >= zeroNum;j-- {
-		for k:=n ; k >= oneNum;k-- {
-			// 推导公式
-			dp[j][k] = max(dp[j][k],dp[j-zeroNum][k-oneNum]+1)
-		}
-	}
+				for k:=n ; k >= oneNum;k-- {
+					// 推导公式
+					dp[j][k] = max(dp[j][k],dp[j-zeroNum][k-oneNum]+1)
+				}
+			}
 	}
 	return dp[m][n]
 }
