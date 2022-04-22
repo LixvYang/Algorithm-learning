@@ -9,14 +9,20 @@
 // 	fmt.Println(arr)
 // }
 
-// func shellSort(arr []int) {
-// 	for gap := 4; gap > 0; gap /= 2 {
-// 		for i := gap; i < len(arr); i++ {
-// 			for j := i; j >gap-1;j-=gap {
-// 				if arr[j] < arr[j-gap] {
-// 					arr[j], arr[j-gap] = arr[j-gap], arr[j]
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+func shellSort(arr []int) {
+	h := 1
+	for h <= len(arr)/3 {
+		h = h*3+1
+	}
+
+
+	for gap := h; gap > 0; gap = (gap-1)/3 {
+		for i := gap; i < len(arr); i++ {
+			for j := i; j >gap-1;j-=gap {
+				if arr[j] < arr[j-gap] {
+					arr[j], arr[j-gap] = arr[j-gap], arr[j]
+				}
+			}
+		}
+	}
+}
