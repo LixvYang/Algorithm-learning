@@ -1,7 +1,7 @@
 // 下一个更大元素1
 package leetcode
 
-func nextGreaterElement(nums1 []int, nums2 []int) []int {
+func NextGreaterElement(nums1 []int, nums2 []int) []int {
 	res := make([]int, len(nums1))
 	// 初始化res = -1
 	for i := range nums1 {
@@ -16,7 +16,7 @@ func nextGreaterElement(nums1 []int, nums2 []int) []int {
 	// 单调栈， 装nums2从小到大排序
 	stack := make([]int, 0)
 	for i := 0; i < len(nums2); i++ {
-		for len(stack) > 0 && nums2[i] > nums[stack[len(stack)-1]] {
+		for len(stack) > 0 && nums2[i] > nums2[stack[len(stack)-1]] {
 			top := stack[len(stack)-1]
 			if index, ok := mp[nums2[top]]; ok {
 				res[index] = nums2[i]

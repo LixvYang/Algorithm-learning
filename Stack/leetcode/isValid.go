@@ -1,3 +1,5 @@
+package leetcode
+
 func isValid(s string) bool {
 	n := len(s)
 

@@ -1,5 +1,7 @@
 // 滑动窗口最大值
 // 自建递减队列
+package leetcode
+
 type MyQueue struct {
 	queue []int
 }
