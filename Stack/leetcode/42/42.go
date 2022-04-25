@@ -53,6 +53,28 @@ func Trap2(height []int) int {
 	return sum
 }
 
+func Trap3(height []int) int {
+	sum := 0
+	stack := []int{}
+	for i := 0; i < len(height); i++ {
+			for len(stack) > 0 && height[i] > height[stack[len(stack)-1]] {
+					top := stack[len(stack)-1]
+					stack = stack[:len(stack)-1]
+
+					if len(stack)>0 {
+							left := stack[len(stack)-1]
+							curWidth := i-left-1
+							curHeight := min(height[i], height[left]) - height[top]
+							sum += curWidth*curHeight
+					}
+			}
+
+			stack = append(stack, i)
+	}
+	return sum
+}
+
+
 func min(a, b int) int {
 	if a < b {
 		return a
