@@ -15,7 +15,7 @@ func TestMergeTwoLists(t *testing.T) {
 		list2 *ListNode
 		want  *ListNode
 	}{	
-		{l1, n1, &ListNode{1, &ListNode{2, &ListNode{3, &ListNode{4, &ListNode{5, &ListNode{6, nil}}}}}}},g
+		{l1, n1, &ListNode{1, &ListNode{2, &ListNode{3, &ListNode{4, &ListNode{5, &ListNode{6, nil}}}}}}},
 	}
 
 	for _, test := range tests {
