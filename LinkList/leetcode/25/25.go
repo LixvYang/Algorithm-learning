@@ -20,6 +20,21 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 	return hair.Next
 }
 
+// 递归写法
+func reverseKGroup(head *ListNode, k int) *ListNode {
+	cur := head 
+	for i := 0; i < k; i++ {
+		if cur == nil {
+			return head
+		}
+		cur = cur.Next
+	}
+
+	newHead := reverse(head, cur)
+	head.Next = reverseKGroup(cur, k)
+	return newHead
+}
+
 func myReverse(head, tail *ListNode) (*ListNode, *ListNode) {
 	prev := tail.Next
 	p := head
