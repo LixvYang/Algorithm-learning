@@ -1,8 +1,8 @@
-// Package leetcode provides 
+// Package leetcode provides
 package leetcode
 
 func removeDuplicates(s string) string {
-	var stacl []byte
+	var stack []byte
 
 	for i := 0; i < len(s); i++ {
 		if len(stack) > 0 && stack[len(stack)-1] == s[i] {
@@ -13,4 +13,3 @@ func removeDuplicates(s string) string {
 	}
 	return string(stack)
 }
-
