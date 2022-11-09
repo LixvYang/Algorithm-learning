@@ -20,7 +20,6 @@ func change(amount int, coins []int) int {
 		}
 		fmt.Println(dp)
 	}
-
 	return dp[amount]
 }
 
