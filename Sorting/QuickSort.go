@@ -15,13 +15,32 @@ func QuickSort(arr []int) []int {
 
 func separateSort(arr []int, start, end int) {
 	if start >= end {
-		return 
+		return
 	}
 
 	i := partition(arr, start, end)
-	separateSort(arr,start,i-1)
+	separateSort(arr, start, i-1)
 	separateSort(arr, i+1, end)
 }
+
+// func partition(arr []int, start, end int) int {
+// 	pivot := arr[end]
+
+// 	left := start
+// 	right := end-1
+// 	for left < right {
+// 		for left <= right && arr[left] <= pivot {
+// 			left++
+// 		}
+// 		for left <= right && arr[right] >= pivot {
+// 			right--
+// 		}
+// 		if (left < right) {
+// 			arr[left], arr[right] = arr[right], arr[left]
+// 		}
+// 	}
+// 	left, right = right, left
+// }
 
 func partition(arr []int, start, end int) int {
 	pivot := arr[end]
@@ -36,5 +55,5 @@ func partition(arr []int, start, end int) int {
 		}
 	}
 	arr[end], arr[i] = arr[i], arr[end]
-	return i 
+	return i
 }
