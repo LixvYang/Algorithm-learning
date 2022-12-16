@@ -10,5 +10,4 @@ func TestTwoSum(t *testing.T) {
 	if TwoSum(q, target) != nil {
 		t.Log("ok")
 	}
-
 }
