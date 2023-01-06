@@ -1,6 +1,8 @@
 // package sorting
 package main
 
+import "fmt"
+
 // import "fmt"
 
 // func main() {
@@ -11,7 +13,6 @@ package main
 //   sort(sample)
 // 	fmt.Println(sample)
 // }
-
 
 // func selectionSort(arr []int) {
 // 	len := len(arr)
@@ -30,12 +31,12 @@ package main
 // 	}
 // }
 
-func sort(arr[]int) {
+func sort(arr []int) {
 	length := len(arr)
 
 	for i := 0; i < length-1; i++ {
 		minIndex := i
-		for j := i+1; j < length; j++ {
+		for j := i + 1; j < length; j++ {
 			if arr[minIndex] > arr[j] {
 				minIndex = j
 			}
