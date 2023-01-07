@@ -47,5 +47,4 @@ func merge(arr []int, start, mid, end int) {
 	}
 
 	copy(arr[start:end+1], tmpArr)
-
 }
