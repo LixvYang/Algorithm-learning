@@ -3,6 +3,7 @@ package other
 import "fmt"
 
 func convert(m, n int) string {
+	// sign check m is a negative
 	var sign bool
 	var res string
 	if m < 0 {
@@ -17,7 +18,9 @@ func convert(m, n int) string {
 		} else {
 			b = 'A' + byte(q-10)
 		}
+		fmt.Println(string(b))
 		res = string(b) + res
+		fmt.Println(res)
 		m /= n
 	}
 	if sign {
@@ -27,5 +30,6 @@ func convert(m, n int) string {
 }
 
 func main() {
-	fmt.Println(convert(10, 2))
+	convert(10, 2)
+	// fmt.Println(convert(10, 2))
 }
