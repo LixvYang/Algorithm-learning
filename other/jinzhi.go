@@ -1,13 +1,13 @@
-package other
+package main
 
 import "fmt"
 
 func convert(m, n int) string {
-	// sign check m is a negative
-	var sign bool
+	// check m is a negative
+	var negative bool
 	var res string
 	if m < 0 {
-		sign = true
+		negative = true
 		m = -m
 	}
 	for m > 0 {
@@ -18,12 +18,12 @@ func convert(m, n int) string {
 		} else {
 			b = 'A' + byte(q-10)
 		}
-		fmt.Println(string(b))
+		fmt.Println("b: " + string(b))
 		res = string(b) + res
-		fmt.Println(res)
+		fmt.Println("res: ", res)
 		m /= n
 	}
-	if sign {
+	if negative {
 		res = "-" + res
 	}
 	return res
