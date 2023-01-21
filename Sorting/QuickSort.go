@@ -23,24 +23,24 @@ func separateSort(arr []int, start, end int) {
 	separateSort(arr, i+1, end)
 }
 
-// func partition(arr []int, start, end int) int {
-// 	pivot := arr[end]
+func partition(arr []int, start, end int) int {
+	pivot := arr[end]
 
-// 	left := start
-// 	right := end-1
-// 	for left < right {
-// 		for left <= right && arr[left] <= pivot {
-// 			left++
-// 		}
-// 		for left <= right && arr[right] >= pivot {
-// 			right--
-// 		}
-// 		if (left < right) {
-// 			arr[left], arr[right] = arr[right], arr[left]
-// 		}
-// 	}
-// 	left, right = right, left
-// }
+	left := start
+	right := end-1
+	for left < right {
+		for left <= right && arr[left] <= pivot {
+			left++
+		}
+		for left <= right && arr[right] >= pivot {
+			right--
+		}
+		if (left < right) {
+			arr[left], arr[right] = arr[right], arr[left]
+		}
+	}
+	left, right = right, left
+}
 
 func partition(arr []int, start, end int) int {
 	pivot := arr[end]
