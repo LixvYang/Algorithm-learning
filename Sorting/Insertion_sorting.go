@@ -5,10 +5,10 @@ package main
 import "fmt"
 
 func main() {
-    sample := []int{3, 4, 5, 2, 1}
-    sort(sample)
-    sample = []int{3, 4, 5, 2, 1, 7, 8, -1, -3}
-    sort(sample)
+	sample := []int{3, 4, 5, 2, 1}
+	sort(sample)
+	sample = []int{3, 4, 5, 2, 1, 7, 8, -1, -3}
+	sort(sample)
 }
 
 // func insertionSort(arr []int) {
@@ -29,10 +29,8 @@ func main() {
 func sort(arr []int) {
 	for i := 1; i < len(arr); i++ {
 		for j := i; j > 0 && arr[j] < arr[j-1]; j-- {
-				arr[j], arr[j-1] = arr[j-1], arr[j]
-		} 
-	}	
+			arr[j], arr[j-1] = arr[j-1], arr[j]
+		}
+	}
 	fmt.Println(arr)
 }
-
-
