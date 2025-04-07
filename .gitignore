@@ -1,0 +1,36 @@
+./leetcode-rs/target
+
+# Rust 编译输出目录
+/target/
+**/target/
+
+# 依赖目录
+/Cargo.lock
+
+# IDE 相关文件
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 操作系统相关文件
+.DS_Store
+Thumbs.db
+
+# 调试文件
+*.pdb
+
+# 环境变量文件
+.env
+.env.local
+
+# 日志文件
+*.log
+
+# 测试覆盖率报告
+/coverage/
+*.profraw
+
+# 临时文件
+*.tmp
+*.temp

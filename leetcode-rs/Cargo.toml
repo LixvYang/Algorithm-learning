@@ -1,0 +1,16 @@
+[package]
+name = "leetcode-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "LeetCode solutions in Rust"
+
+[dependencies]
+# 常用的数据结构
+rand = "0.8.5" # 用于生成随机数
+# 测试相关
+test-case = "3.3.1" # 用于参数化测试
+
+[dev-dependencies]
+# 开发依赖
+criterion = "0.5.1" # 用于性能测试
